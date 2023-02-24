@@ -31,17 +31,37 @@ body::-webkit-scrollbar{
 .navbar {
   background: var(--secondary-color);
   padding: 1em;
-
+  display: flex;
+  place-content: space-between;
+  @keyframes nav-selection {
+    from {
+      font-size: 1.3em;
+    }
+    to {
+      font-size: 1.34em;
+    }
+  }
+  //bb love
+  @keyframes nav-menu-opening {
+    from {
+      width: 0%;
+      font-size: 0%;
+    }
+    to {
+      width: var(--mobile-menu-size);
+      font-size: 100%;
+    }
+  }
 
   .logo {
     text-decoration: none;
     font-weight: bolder;
     color: var(--primary-color);
     font-size: 1.2em;
+  }
 
-    span {
+  span {
       color: var(--primary-color);
-    }
   }
 
   .subheader {
@@ -54,29 +74,14 @@ body::-webkit-scrollbar{
     margin: auto;
   }
 
-  @keyframes nav-selection {
-    from {
-      font-size: 1.3em;
-    }
-    to {
-      font-size: 1.34em;
-    }
-  }
+  .mobile-menu {
+    width: 1.6em;
+    cursor: pointer;
+  } 
 
-  //bb love
 
-  @keyframes nav-menu-opening {
-    from {
-      width: 0%;
-      font-size: 0%;
-    }
-    to {
-      width: var(--mobile-menu-size);
-      font-size: 100%;
-    }
-  }
-
-  nav {
+  .mobile-open{
+    padding: 3em 1.5em;
     border-radius: 15px 0px 0px 15px;
     border-color: var(--accent-color);
     border-style: solid;
@@ -90,18 +95,16 @@ body::-webkit-scrollbar{
     background: var(--secondary-color);
     height: 98.5vh;
     animation-timing-function: ease-in-out;
-    a {
-      color: var(--nav-text-color);
-      text-decoration: none;
-      text-shadow: 0px 0px 15px var(--nav-text-color);
-      font-size: 1.4em;
-      &:hover {
-        font-weight: bolder;
-        animation: nav-selection 0.25s ease-in-out;
-      }
+
+    .mobile-exit {
+      width: 1.5em;
+      cursor: pointer;
+      display: block;
+      padding: 0.5em;
+      padding-left: 0;
     }
 
-    ul{
+    .navlist{
         height: auto;
         font-size: 1em;
         background-color: var(--primary-color);
@@ -113,125 +116,107 @@ body::-webkit-scrollbar{
         list-style-type: none;
         padding: 0.25em 0 0.5em 0;
         text-align: center;
+        a{
+          color: var(--nav-text-color);
+          text-decoration: none;
+          text-shadow: 0px 0px 15px var(--nav-text-color);
+          font-size: 1.4em;
+          &:hover {
+            font-weight: bolder;
+            animation: nav-selection 0.25s ease-in-out;
+          }
+        }
     }
-    .mobile-menu-exit {
-      width: 1.5em;
-      cursor: pointer;
-      display: block;
-      padding: 0.5em;
-      padding-left: 0;
-    }
-  }
-
-  .container {
-    display: flex;
-    place-content: space-between;
-  }
-
-  .mobile-menu {
-    width: 1.6em;
-    cursor: pointer;
-  }
-
-  section {
-    padding: 3em 1.5em;
   }
 }
 
 
-.hero {
+.main{
     text-align: center;
     padding: 0.5em 1.5em;
-}
-@keyframes text-wiggle {
+
+  @keyframes text-wiggle {
     from {
       transform: rotate(-3deg);
     }
     to {
       transform: rotate(3deg);
     }
-}
+  }
+  h1 {
+    font-size: 2em;
+    line-height: 1em;
+    margin-top: 0.5em;
+    margin-bottom: 0.75em;
+    color: var(--secondary-color);
+    animation: text-wiggle 2s ease-in-out infinite alternate;
+  }
 
-.left-column {
+  .search-section {
+    text-align: center;
+    margin: auto;
+    width: 22em;
+    height: 3em;
 
-    h1 {
-      font-size: 2em;
-      line-height: 1em;
-      margin-top: 0.5em;
-      margin-bottom: 0.75em;
-      color: var(--secondary-color);
-      animation: text-wiggle 2s ease-in-out infinite alternate;
-    }
-
-    .search-section {
-      text-align: center;
-      margin: auto;
-      width: 22em;
-      height: 3em;
-
-      @keyframes open-search-box {
-        from {
-          width: 0em;
-          height: 0em;
-          font-size: 0;
-        }
-        to {
-          width: 15em;
-          height: 3em;
-          font-size: 1em;
-        }
+    @keyframes open-search-box {
+      from {
+        width: 0em;
+        height: 0em;
+        font-size: 0;
       }
-      @keyframes open-search-button {
-        from {
-          width: 0em;
-          height: 0em;
-          font-size: 0;
-        }
-        to {
-          width: 4em;
-          height: 1em;
-          font-size: 0.75em;
-        }
-      }
-
-      .song-search {
+      to {
         width: 15em;
         height: 3em;
         font-size: 1em;
-        background: var(--secondary-color);
-        border-style: solid;
-        border-width: 0px 3px 5px 0px;
-        border-color: var(--accent-color);
-        border-radius: 5em;
-        animation-name: open-search-box;
-        animation-duration: 0.75s;
-        padding-left: 1em;
       }
-
-      .song-search-button {
-        background: var(--secondary-color);
-        color: var(--primary-color);
-        text-decoration: none;
-        padding: 0.6em 0.6em;
+    }
+    @keyframes open-search-button {
+      from {
+        width: 0em;
+        height: 0em;
+        font-size: 0;
+      }
+      to {
+        width: 4em;
+        height: 1em;
         font-size: 0.75em;
-        border-style: solid;
-        border-width: 0px 3px 5px 0px;
-        border-color: var(--accent-color);
-        border-radius: 10em;
-        font-weight: bold;
-        display: inline;
-        animation-name: open-search-button;
-        animation-duration: 0.5s;
-        animation-timing-function: ease-in-out;
+      }
+    }
+    .song-search {
+      width: 15em;
+      height: 3em;
+      font-size: 1em;
+      background: var(--secondary-color);
+      border-style: solid;
+      border-width: 0px 3px 5px 0px;
+      border-color: var(--accent-color);
+      border-radius: 5em;
+      animation-name: open-search-box;
+      animation-duration: 0.75s;
+      padding-left: 1em;
+    }
 
-        .search-icon {
-          width: 1em;
-          padding: 0 0.5em 0 0;
-        }
+    .song-search-button {
+      background: var(--secondary-color);
+      color: var(--primary-color);
+      text-decoration: none;
+      padding: 0.6em 0.6em;
+      font-size: 0.75em;
+      border-style: solid;
+      border-width: 0px 3px 5px 0px;
+      border-color: var(--accent-color);
+      border-radius: 10em;
+      font-weight: bold;
+      display: inline;
+      animation-name: open-search-button;
+      animation-duration: 0.5s;
+      animation-timing-function: ease-in-out;
+    }
+    .search-icon {
+      width: 1em;
+      padding: 0 0.5em 0 0;
     }
   }
-}
-
 @keyframes selected-video {
   from{
     border-width: 2px;
@@ -314,4 +299,5 @@ body::-webkit-scrollbar{
       cursor:pointer;
     }
   }
+}
 }

@@ -5,64 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Q</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/theq/css/theq.css" />
   </head>
   <body>
     <div class="navbar">
-      <div class="container">
         <a href="index.html" class="logo">The <span>Q</span></a>
         <p class="subheader">Get Ready to Q Up!</p>
-        <img
-          id="mobile-calltoaction"
-          class="mobile-menu"
-          src="images/menu.svg"
-          alt="Navigation"
-        />
+        <img id="mobile-menu" class="mobile-menu" src="/images/menu.svg" alt="Open Navigation"/>
 
-        <nav class="mobile-menu-open">
-          <img
-            id="mobile-exit"
-            class="mobile-menu-exit"
-            src="images/closemenu.svg"
-            alt="Close Navigation"
-          />
-          <ul class="primary-nav">
-            <li class="contact">
-              <a href="#">Contact</a>
+        <nav id="mobile-open" class="mobile-open">
+          <img id="mobile-exit" class="mobile-exit" src="/images/closemenu.svg" alt="Close Navigation"/>
+          <ul class="navlist">
+            <li class="home">
+                <a href="https://justyunis.xyz/" alt="Homepage">Home</a>
             </li>
-          </ul>
-          <ul class="secondary-nav">
-            <li>
-              <a href="#">Other Pages</a>
+            <li class="the-q">
+                <a href="https://justyunis.xyz/theq/" alt="The Q">The Q</a>
+            </li>
+            <li class="github">
+                <a href="https://github.com/WAVForm" alt="Link to my Github">Github</a>
+            </li>
+            <li class="contact" >
+                <a href="https://justyunis.xyz/contact/" alt="Contact">Contact</a>
             </li>
           </ul>
         </nav>
-      </div>
     </div>
 
-    <section class="hero">
-      <div class="container">
-        <div class="left-column">
+    <section class="main">
           <h1>Music Queue For My House</h1>
-
           <div class="search-section">
-            <input
-              class="song-search"
-              type="song-search"
-              id="song-search"
-              name="song-search"
-              placeholder="Search Your Song..."
-            />
+            <input class="song-search" type="song-search" id="song-search" name="song-search" placeholder="Search Your Song..."/>
             <a href="#" type ="submit" id= "song-search-button" class="song-search-button">
-              <img
-                class="search-icon"
-                src="images/search.svg"
-                alt="Search"
-              />Search
+              <img class="search-icon" src="/theq/images/search.svg" alt="Search"/>Search
             </a>
           </div>
-        </div>
-      </div>
         <div class="videos" id="videos">
         </div>
     </section>
