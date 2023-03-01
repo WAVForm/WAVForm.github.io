@@ -3,7 +3,7 @@
   --secondary-color: #c6e5b6;
   --accent-color: #416450;
   --nav-text-color: #65977c;
-  --mobile-menu-size: 25%;
+  --mobile-menu-size: 35%;
 }
 
 body {
@@ -33,13 +33,6 @@ body::-webkit-scrollbar{
   padding: 1em;
   display: flex;
   place-content: space-between;
-  @keyframes nav-selection {
-    from {
-      font-size: 1.3em;
-    }
-    to {
-      font-size: 1.34em;
-    }
   }
   //bb love
   @keyframes nav-menu-opening {
@@ -81,7 +74,6 @@ body::-webkit-scrollbar{
 
 
   .mobile-open{
-    padding: 3em 1.5em;
     border-radius: 15px 0px 0px 15px;
     border-color: var(--accent-color);
     border-style: solid;
@@ -114,21 +106,29 @@ body::-webkit-scrollbar{
         border-color: var(--primary-color);
         margin: 0 0.25em 0.2em 0;
         list-style-type: none;
-        padding: 0.25em 0 0.5em 0;
+        padding: 0.25em 0 0 0;
         text-align: center;
         a{
           color: var(--nav-text-color);
           text-decoration: none;
           text-shadow: 0px 0px 15px var(--nav-text-color);
           font-size: 1.4em;
+          transition: font-size 0.25s;
+          text-align: center;
           &:hover {
+            font-size: 2em;
             font-weight: bolder;
-            animation: nav-selection 0.25s ease-in-out;
           }
+        }
+        li{
+          border-color: var(--secondary-color);
+          border-style:double;
+          border-width: 0.5em;
+          border-radius: 5%;
+          margin: 0.25em 0 0.75em 0;
         }
     }
   }
-}
 
 
 .main{

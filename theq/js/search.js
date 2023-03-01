@@ -1,22 +1,5 @@
-//version 0.24
+//version 0.25
 $(document).ready(()=>{
-
-  $('#mobile-menu').click(()=>{
-    $('#mobile-open').css("display", "block");
-    $('#mobile-open').css("animation", "nav-menu-opening 1s cubic-bezier(0.5, 0, 0.25, 1) 1");
-    $('#mobile-open').css("width", "var(--mobile-menu-size)");
-  });
-
-  $('#mobile-exit').click( ()=>{
-    $('#mobile-open').css("display", "block");
-    $('#mobile-open').css("animation", "");
-    setTimeout(()=>{
-      $('#mobile-open').delay(1).css("animation", "nav-menu-opening 1s cubic-bezier(0.5, 0, 0.25, 1) 1 reverse");
-      setTimeout(() => {
-        $('#mobile-open').delay(1000).css("display", "none");
-      }, "1000");
-    },"1")
-  });
 
   $('#song-search-button').click((event)=>{
     let search = $("#song-search").val()
@@ -35,7 +18,7 @@ $(document).ready(()=>{
   let titleID = 0;
   let selectedSong;
   let lastSongSelected = 54321;
-  const serverIP = `https://justyunis.xyz/qport`;
+  const serverIP = `https://justyunis.xyz/qport/`;
 
   function videoSearch(search){
     termBody = {"term":`${search}`};
