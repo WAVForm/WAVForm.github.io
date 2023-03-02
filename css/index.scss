@@ -1,9 +1,9 @@
 :root {
---primary-color: #25312a;
+  --primary-color: #25312a;
   --secondary-color: #c6e5b6;
   --accent-color: #416450;
   --nav-text-color: #65977c;
-  --mobile-menu-size: 35%;
+  --mobile-menu-size: 300px;
 }
 
 body {
@@ -35,7 +35,7 @@ body {
                 font-size: 0%;
             }
             to {
-                width: var(--mobile-menu-size);
+                max-width: var(--mobile-menu-size);
                 font-size: 100%;
             }
         }
@@ -64,7 +64,7 @@ body {
             right: 0;
             top: 0;
             background: var(--secondary-color);
-            height: 98.5vh;
+            height: 100vh;
             animation-timing-function: ease-in-out;
         
             .mobile-exit {
@@ -112,99 +112,21 @@ body {
   }
     .main{
         text-align: center;
-        padding: 0.5em 1.5em;
-    
-      @keyframes text-wiggle {
-        from {
-          transform: rotate(-3deg);
-        }
-        to {
-          transform: rotate(3deg);
-        }
-      }
-      @keyframes fade {
-        from{
-          opacity: 100%;
-        }
-        to{
-          opacity: 0%;
-        }
-      }
-      .container{
-        margin-bottom: 3em;
-        h2 {
-          margin:auto;
-          font-size: 2em;
-          line-height: 1em;
-          margin-top: 0.5em;
-          margin-bottom: 0.75em;
-          color: var(--secondary-color);
-          margin-bottom: 2em;
-        }
-        h4{
-          font-size: 1.25em;
-          margin:auto;
-          width: 40vw;
-          text-decoration: underline;
-          font-variant: small-caps;
-          color: var(--accent-color);
-          background-color: var(--secondary-color);
-          padding-bottom: 0.25em;
-        }
-        p{
-          font-size: 0.75em;
-          font-weight: bolder;
-          color: var(--nav-text-color)
-        }
-          div{
-            margin-top: 1em;
-            position: relative;
-            display: none;
-            .left-arrow{
-              display: none;
-              transform:scaleX(-1);
-              width:1em;
-              height:auto;
-              top: 50%;
-              position:absolute;
-              z-index: 999;
-              background-color: rgba($color: white, $alpha: 0.5);
-              background-position: 50% 0%;
-              border-radius: 25%;
-            }
-            h5{
-              margin: auto;
-              font-size: 1em;
-              position: absolute;
-              top: 0;
-              left: 0;
-              right: 0;
-              color:var(--accent-color);
-              background-color: var(--nav-text-color);
-              z-index: 999;
-            }
-            div{
-              display:inline-block;
-              img{
-                object-fit: cover;
-                width: 200px;    
-                height: 200px;    
-              }
-            }
-            .right-arrow{
-              display: none;
-              width:1em;
-              height:auto;
-              top: 50%;
-              right: 0;
-              position:absolute;
-              z-index: 999;
-              background-color: rgba($color: white, $alpha: 0.5);
-              background-position: 50% 0%;
-              border-radius: 25%;
-            }
-        }
-      }
+        padding: 1.5em;
+        margin: auto;
+
+      .shadow-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.8;
+        filter: alpha(opacity=60);
+        z-index: 998;
+        display: none;
+      } 
 }
 
 body::-webkit-scrollbar{

@@ -4,11 +4,13 @@ $(document).ready(()=>{
     $('#mobile-open').css("display", "block");
     $('#mobile-open').css("animation", "nav-menu-opening 1s cubic-bezier(0.5, 0, 0.25, 1) 1");
     $('#mobile-open').css("width", "var(--mobile-menu-size)");
+    $('.shadow-background').fadeIn(1000);
   });
 
   $('#mobile-exit').click( ()=>{
     $('#mobile-open').css("display", "block");
     $('#mobile-open').css("animation", "");
+    $('.shadow-background').fadeOut(1000);
     setTimeout(()=>{
     $('#mobile-open').delay(1).css("animation", "nav-menu-opening 1s cubic-bezier(0.5, 0, 0.25, 1) 1 reverse");
     setTimeout(() => {

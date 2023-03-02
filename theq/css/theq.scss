@@ -3,7 +3,7 @@
   --secondary-color: #c6e5b6;
   --accent-color: #416450;
   --nav-text-color: #65977c;
-  --mobile-menu-size: 35%;
+  --mobile-menu-size: 300px;
 }
 
 body {
@@ -110,9 +110,9 @@ body::-webkit-scrollbar{
         text-align: center;
         a{
           color: var(--nav-text-color);
-          text-decoration: none;
+          text-decoration: bold;
           text-shadow: 0px 0px 15px var(--nav-text-color);
-          font-size: 1.4em;
+          font-size: 1em;
           transition: font-size 0.25s;
           text-align: center;
           &:hover {
@@ -143,6 +143,20 @@ body::-webkit-scrollbar{
       transform: rotate(3deg);
     }
   }
+
+  .shadow-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.8;
+    filter: alpha(opacity=60);
+    z-index: 998;
+    display: none;
+  } 
+
   h1 {
     font-size: 2em;
     line-height: 1em;
