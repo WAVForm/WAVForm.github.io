@@ -106,6 +106,6 @@ body .main .info .container .hide div .slideshow {
 body .main .info .container .hide div .slideshow img {
   aspect-ratio: 3/4;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   background: var(--color1);
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

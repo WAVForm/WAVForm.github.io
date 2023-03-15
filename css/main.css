@@ -13,7 +13,8 @@
 body {
   background: var(--color1);
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   overflow-x: hidden;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -55,7 +56,8 @@ body .navbar span {
   color: var(--color1);
 }
 body .navbar .subheader {
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   font-size: 1em;
   text-transform: uppercase;
   font-weight: lighter;
@@ -192,4 +194,4 @@ body .main div div a {
 
 body::-webkit-scrollbar {
   display: none;
-}/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */

@@ -1,18 +1,16 @@
 //version 0.25
-$(document).ready(()=>{
-
-  $('#song-search-button').click((event)=>{
-    let search = $("#song-search").val()
+$(document).ready(() => {
+  $("#song-search-button").click((event) => {
+    let search = $("#song-search").val();
     videoSearch(search);
-  }) 
+  });
 
-  $("#song-search").keyup((enter)=>{
+  $("#song-search").keyup((enter) => {
     if (enter.keyCode === 13) {
-        $("#song-search-button").click();
+      $("#song-search-button").click();
     }
   });
 
-  
   let songSearched = false;
   let songs = new Array(20);
   let titleID = 0;
@@ -20,60 +18,86 @@ $(document).ready(()=>{
   let lastSongSelected = 54321;
   const serverIP = `https://justyunis.xyz/qport/`;
 
-  function videoSearch(search){
-    termBody = {"term":`${search}`};
-    fetch(serverIP+`songsearch`, {
+  function videoSearch(search) {
+    termBody = { term: `${search}` };
+    fetch(serverIP + `songsearch`, {
       method: "POST",
-      headers: {'Content-Type': 'application/json'}, 
-      body: JSON.stringify(termBody)
-    }).then((response)=>{
-      return response.text();
-    }).then((string)=>{
-      songs = JSON.parse(string);
-      titleID=0;
-      $(`#videos`).html(``);
-      for(i=0; i<songs.length;i++){
-      $("#videos").append(`<div id=video`+titleID+` class=video`+titleID+`></div>`);
-      $("#video"+titleID).append(`<p id=song-title`+titleID+`>`+songs[i].title+` by `+songs[i].author+`</p>`);
-      $("#video"+titleID).append(`<img id=song-image`+titleID+` src="`+songs[i].thumbnail+`"></img>`);
-      titleID++;
-    }
-    }); 
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(termBody),
+    })
+      .then((response) => {
+        return response.text();
+      })
+      .then((string) => {
+        songs = JSON.parse(string);
+        titleID = 0;
+        $(`#videos`).html(``);
+        for (i = 0; i < songs.length; i++) {
+          $("#videos").append(
+            `<div id=video` + titleID + ` class=video` + titleID + `></div>`
+          );
+          $("#video" + titleID).append(
+            `<p id=song-title` +
+              titleID +
+              `>` +
+              songs[i].title +
+              ` by ` +
+              songs[i].author +
+              `</p>`
+          );
+          $("#video" + titleID).append(
+            `<img id=song-image` +
+              titleID +
+              ` src="` +
+              songs[i].thumbnail +
+              `"></img>`
+          );
+          titleID++;
+        }
+      });
     songSearched = true;
   }
 
-  $("#videos").click((event)=>{
-    if(songSearched == true){
+  $("#videos").click((event) => {
+    if (songSearched == true) {
       let targetID = event.target.id;
       targetID = targetID.match(/[0-9]+/gm);
-      if(targetID != null){
-        if(lastSongSelected != targetID){
+      if (targetID != null) {
+        if (lastSongSelected != targetID) {
           $(`#submit-button`).remove();
-          $('#video'+lastSongSelected).css("animation" , "last-video 0.1s ease-in-out 1 alternate");
-          $('#video'+lastSongSelected).css("border-color" , "var(--accent-color)");
+          $("#video" + lastSongSelected).css(
+            "animation",
+            "last-video 0.1s ease-in-out 1 alternate"
+          );
+          $("#video" + lastSongSelected).css(
+            "border-color",
+            "var(--accent-color)"
+          );
           lastSongSelected = targetID;
           selectedSong = songs[targetID];
-          $('#video'+targetID).css("animation" , "selected-video 1s ease-in-out infinite alternate");
-          $('#video'+targetID).css("border-color" , "var(--secondary-color)");
-          $("#video"+targetID).append(`<a id=submit-button>Submit</a>`);
-          $(`#submit-button`).css('animation', `open-submit 1s ease-in-out`)
+          $("#video" + targetID).css(
+            "animation",
+            "selected-video 1s ease-in-out infinite alternate"
+          );
+          $("#video" + targetID).css("border-color", "var(--secondary-color)");
+          $("#video" + targetID).append(`<a id=submit-button>Submit</a>`);
+          $(`#submit-button`).css("animation", `open-submit 1s ease-in-out`);
         }
       }
     }
-  })
+  });
 
-
-  $('#videos').on('click','#submit-button',(event)=>{
+  $("#videos").on("click", "#submit-button", (event) => {
     fetch(serverIP, {
       method: "POST",
-      headers: {'Content-Type': 'application/json'}, 
-      body: JSON.stringify(selectedSong)
-    }).then((response)=>{
-      if(response.status==503){
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(selectedSong),
+    }).then((response) => {
+      if (response.status == 503) {
         alert(`No reciever connected to send song to...`);
-      }else{
+      } else {
         alert(`SONG SUBMITTED!`);
       }
     });
-  })
-})
+  });
+});
