@@ -7,6 +7,16 @@
     opacity: 0%;
   }
 }
+@keyframes openbox {
+  from {
+    width: 20%;
+    font-size: 20%;
+  }
+  to {
+    width: 90%;
+    font-size: auto;
+  }
+}
 body .main .left-arrow {
   padding: 0.6em 0.6em;
   border-style: solid;
@@ -42,47 +52,58 @@ body .main .right-arrow {
   background-color: var(--color7);
   background-position: 50% 0%;
 }
-body .main .info h4 {
+body .main .info .container {
+  display: inline-grid;
+  width: var(--cell-size);
+  height: auto;
+  margin: 1em 0em;
+}
+body .main .info .container h4 {
   color: var(--color7);
   background: var(--color3);
   margin: 1em auto;
-  width: 25vw;
+  width: var(--cell-size);
 }
-body .main .info .container {
-  width: -moz-fit-content;
-  width: fit-content;
-  height: auto;
-  margin: 2em auto;
+body .main .info .container h4:hover {
+  filter: brightness(50%);
 }
-body .main .info .container p {
+body .main .info .container .hide {
+  display: none;
+  height: -moz-fit-content;
+  height: fit-content;
+  margin: 0;
+  background: none;
+  border-style: none;
+  justify-content: center;
+}
+body .main .info .container .hide p {
   color: var(--color6);
   font-size: 0.75em;
   height: -moz-fit-content;
   height: fit-content;
   padding-bottom: 1em;
 }
-body .main .info .container h5 {
+body .main .info .container .hide h5 {
   color: var(--color5);
   margin: 0.5em auto;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: auto;
   text-shadow: 1.5px 0.5px var(--color4);
 }
-body .main .info .container div {
+body .main .info .container .hide div {
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
   margin: 0 1em 1em 1em;
   position: relative;
   border-style: none;
 }
-body .main .info .container div .slideshow {
+body .main .info .container .hide div .slideshow {
   border-style: none;
   margin: 0;
-  height: -moz-fit-content;
-  height: fit-content;
-  width: var(--cell-size);
 }
-body .main .info .container div .slideshow img {
+body .main .info .container .hide div .slideshow img {
   aspect-ratio: 3/4;
   -o-object-fit: contain;
      object-fit: contain;

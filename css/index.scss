@@ -11,6 +11,17 @@ body {
       }
     }
 
+    @keyframes openbox{
+      from{
+        width: 20%;
+        font-size: 20%;
+      }
+      to{
+        width: 90%;
+        font-size: auto;
+      }
+    }
+
     .left-arrow{
       padding: 0.6em 0.6em;
       border-style: solid;
@@ -49,43 +60,55 @@ body {
     }
     
     .info{
-      
-      h4{
-        color: var(--color7);
-        background: var(--color3);
-        margin: 1em auto;
-        width: 25vw;
-      }
       .container{
-        width: fit-content;
+        display:inline-grid;
+        width: var(--cell-size);
         height: auto;
-        margin: 2em auto;
-        p{
-          color: var(--color6);
-          font-size: 0.75em;
-          height: fit-content;
-          padding-bottom: 1em;
+        margin: 1em 0em;
+        h4{
+          color: var(--color7);
+          background: var(--color3);
+          margin: 1em auto;
+          width: var(--cell-size);
+          &:hover{
+            filter: brightness(50%);
+          }
         }
-        h5{
-          color: var(--color5);
-          margin: 0.5em auto;
-          width: fit-content;
-          text-shadow: 1.5px 0.5px var(--color4);
-        }
-        div{
+
+        .hide{
+          display: none;
           height: fit-content;
-          margin: 0 1em 1em 1em;
-          position: relative;
+          margin: 0;
+          background: none;
           border-style: none;
-          .slideshow{
-            border-style: none;
-            margin: 0;
+          justify-content: center;
+          p{
+            color: var(--color6);
+            font-size: 0.75em;
             height: fit-content;
-            width: var(--cell-size);;
-            img{
-              aspect-ratio: 3/4;
-              object-fit: contain;
-              background: var(--color1);
+            padding-bottom: 1em;
+          }
+          h5{
+            color: var(--color5);
+            margin: 0.5em auto;
+            width: auto;
+            text-shadow: 1.5px 0.5px var(--color4);
+          }
+          div{
+            display: inline-block;
+            width: fit-content;
+            height: fit-content;
+            margin: 0 1em 1em 1em;
+            position: relative;
+            border-style: none;
+            .slideshow{
+              border-style: none;
+              margin: 0;
+              img{
+                aspect-ratio: 3/4;
+                object-fit: contain;
+                background: var(--color1);
+              }
             }
           }
         }

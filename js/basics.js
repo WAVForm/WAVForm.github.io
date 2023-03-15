@@ -15,9 +15,9 @@ $(document).ready(()=>{
     $('#mobile-open').css("animation", "");
     $('#mobile-open').css("min-width", "");
     setTimeout(()=>{
-    $('#mobile-open').delay(1).css("animation", "nav-menu-opening 1s cubic-bezier(0.5, 0, 0.25, 1) 1 reverse");
+    $('#mobile-open').css("animation", "nav-menu-opening 1s cubic-bezier(0.5, 0, 0.25, 1) 1 reverse");
     setTimeout(() => {
-      $('#mobile-open').delay(1000).css("display", "none");
+      $('#mobile-open').css("display", "none");
     }, "1000");
     },"1")
   });
