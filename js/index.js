@@ -1,20 +1,44 @@
 //v 0.01
 $(document).ready(()=>{
-    $('#hobby-repairs').css('display','inline-block');
-    $('#hobby-photo').css('display','inline-block');
     $('.slideshow').css('display','none');
     $('#hobby-slideshow1').css('display','inline-block');
-    $('#photo-slideshow1').css('display','inline-block');
-   
+    $('#music-slideshow1').css('display','inline-block');
+
     var slideshowtracker = [1,1];
 
-    $('.hobby').mouseover(function a(){
-        $('.arrow').css('display', 'inherit');
-        $('.arrow').css('animation' , 'fade 0.25s linear 1 reverse')
+    $('.title').click(function a(){
+        if(!$(this).attr("open")){
+            $(this).nextAll(".hide").css("display", 'inherit');
+            $(this).nextAll(".hide").css("animation", 'openbox 1s cubic-bezier(0.22, 0.61, 0.36, 1) 1');
+            $(this).nextAll(".hide").find('*').css("animation", 'openbox 1s cubic-bezier(0.22, 0.61, 0.36, 1) 1');
+            
+            setTimeout(() => {
+                $(this).nextAll(".hide").find('*').css("animation", '');
+                $(this).nextAll(".hide").css("animation", '');
+                $(this).attr("open",true);
+            }, "1000");
+        }else{
+            $(this).nextAll(".hide").find('*').css("animation", 'openbox 1s cubic-bezier(0.22, 0.61, 0.36, 1) 1 reverse');
+            $(this).nextAll(".hide").css("animation", 'openbox 1s cubic-bezier(0.22, 0.61, 0.36, 1) 1 reverse');
+            setTimeout(()=>{
+                $(this).nextAll(".hide").css("display", 'none');
+                $(this).nextAll(".hide").find('*').css("animation", '');
+                $(this).nextAll(".hide").css("animation", '');
+                $(this).attr("open", false);
+            }, "1000")
+        }
+    })
+
+    $('.hobby').mouseover(()=>{
+        $('.left-arrow').css('display', 'inherit');
+        $('.left-arrow').css('animation' , 'fade 0.25s linear 1 reverse')
+        $('.right-arrow').css('display', 'inherit');
+        $('.right-arrow').css('animation' , 'fade 0.25s linear 1 reverse')
 
     })
-    $('.hobby').mouseout(function a(){
-        $('.arrow').css('display', 'none');
+    $('.hobby').mouseout(()=>{
+        $('.left-arrow').css('display', 'none');
+        $('.right-arrow').css('display', 'none');
     })
     
 
