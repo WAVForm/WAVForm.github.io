@@ -39,14 +39,15 @@ body {
         }
 
         #menu-title {
+            color: var(--lightBase);
             margin: 1px;
-            /*Center title*/
-            position: fixed;
+            position:absolute;
             left: 50%;
-            transform: translateX(-50%)
+            transform: translateX(-50%);
         }
 
         .menu-button{
+            color: var(--lightBase);
             border: 2px solid var(--darkBase);
             width: 50px;
         }
@@ -109,5 +110,68 @@ body {
     .section-container{
         background-color: var(--darkSub);
         border-radius: var(--borderrad);
+
+        .section-title{
+            text-align: center;
+            color: var(--lightSubAlt);
+            margin-bottom: 0;
+            padding-top: 1%;
+        }
+        p{
+            text-align: center;
+            font-style: italic;
+            font-size: 14pt;
+            color: var(--lightSub);
+            margin: 0;
+            padding: 20px;
+        }
+        .sub-section-container{
+            background-color: var(--lightSubAlt);
+            border-radius: var(--borderrad);
+            margin: 2%;
+            .sub-section-title{
+                text-align: center;
+                color: var(--darkSubAlt);
+                padding: 10px;
+                margin: 0;
+            }
+            .sub-section-content{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                video{
+                    aspect-ratio: 16/9;
+                    height: 45vw;
+                    
+                    margin: 3px;
+                    background-color: var(--darkSubAlt);
+                }
+                .content-slideshow{
+                    aspect-ratio: 16/9;
+                    height: 45vw;
+                    
+                    margin: 3px;
+                    background-color: var(--darkSubAlt);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                img{
+                    aspect-ratio: 16/9;
+                    height: inherit;
+                    
+                }
+                p{
+                    margin: 4px;
+                    padding: 0px;
+                    padding-bottom: 1%;
+                    font-size: 12pt;
+                }
+            }
+        }
+        .footer-space{
+            height: 1%;
+        }
     }
 }
