@@ -1,0 +1,60 @@
+:root {
+    /*Color Palette*/
+    --mainColor: #416450;
+
+    --darkBase: #25312a;
+    --darkSub: #334b3d;
+    --darkSubAlt: #2c3e34;
+    
+    
+    --lightSub: #65977c;
+    --lightBase: #96be99;
+    --lightSubAlt: #c6e5b6;
+    /*Color Palette*/
+
+    --borderrad: 10px;
+}
+
+body{
+    background-color: var(--mainColor);
+}
+
+.menu{
+    background-color: var(--darkBase);
+    border-radius: var(--borderrad);
+    box-shadow: 2px 2px 1px black;
+
+    padding: 1px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    #menu-title{
+        margin: 1px;
+        /*Center title*/
+        position: fixed;
+        left: 50%;
+        transform: translateX(-50%)
+    }
+    #menu-button{
+        width: 40px;
+        margin-right: 10px;
+        margin-left: auto;
+    }
+    #menu-dropdown{
+        background-color: var(--lightBase);
+        width: 25%;
+        border-radius: var(--borderrad);
+
+        align-self: start;
+        position: fixed;
+        left: 100%;
+        transform: translate(-100%, 0);
+        margin-left: 0;
+        margin-right: 10px;
+        ul{
+            color: blue;
+        }
+    }
+}
