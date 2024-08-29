@@ -29,6 +29,15 @@ body {
         justify-content: space-between;
         align-items: center;
 
+        #menu-logo{
+            border: 1px solid black;
+            width: 50px;
+
+            /*Push item to left*/
+            margin-left: 10px;
+            margin-right: auto;
+        }
+
         #menu-title {
             margin: 1px;
             /*Center title*/
@@ -43,6 +52,7 @@ body {
         }
 
         #menu-open {
+            /*Push item to right*/
             margin-right: 10px;
             margin-left: auto;
         }
@@ -55,7 +65,7 @@ body {
         }
 
         #menu-dropdown {
-            display: block;
+            display: none;
 
             background-color: var(--lightBase);
             width: 25%;
@@ -94,5 +104,10 @@ body {
                 }
             }
         }
+    }
+
+    .section-container{
+        background-color: var(--darkSub);
+        border-radius: var(--borderrad);
     }
 }
