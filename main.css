@@ -129,6 +129,7 @@ body {
             background-color: var(--lightSubAlt);
             border-radius: var(--borderrad);
             margin: 2%;
+            cursor: pointer;
             .sub-section-title{
                 text-align: center;
                 color: var(--darkSubAlt);
@@ -136,7 +137,7 @@ body {
                 margin: 0;
             }
             .sub-section-content{
-                display: flex;
+                display: none;
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
