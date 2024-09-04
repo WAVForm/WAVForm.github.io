@@ -158,6 +158,17 @@ body {
                     justify-content: center;
                     align-items: center;
                 }
+                table{
+                    border: 2px solid black;
+                    th{
+                        padding: 10px;
+                        border: 2px solid black;
+                    }
+                    td{
+                        padding: 10px;
+                        border: 2px dotted black;
+                    }
+                }
                 img{
                     aspect-ratio: 16/9;
                     height: inherit;
