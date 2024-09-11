@@ -129,12 +129,18 @@ body {
             background-color: var(--lightSubAlt);
             border-radius: var(--borderrad);
             margin: 2%;
-            cursor: pointer;
+            .sub-section-open{
+                height: 12pt;
+                transform: rotateX(180deg);
+                cursor: pointer;
+            }
             .sub-section-title{
                 text-align: center;
+                font-size: 12pt;
                 color: var(--darkSubAlt);
                 padding: 10px;
                 margin: 0;
+                width: fit-content;
             }
             .sub-section-content{
                 display: none;
@@ -142,6 +148,7 @@ body {
                 align-items: center;
                 flex-direction: column;
                 video{
+                    display: none;
                     aspect-ratio: 16/9;
                     height: 45vw;
                     
@@ -149,6 +156,7 @@ body {
                     background-color: var(--darkSubAlt);
                 }
                 .content-slideshow{
+                    display: none;
                     aspect-ratio: 16/9;
                     height: 45vw;
                     
@@ -170,7 +178,9 @@ body {
                     }
                 }
                 img{
+                    display: none;
                     aspect-ratio: 16/9;
+                    width: 100%;
                     height: inherit;
                     
                 }
