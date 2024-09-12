@@ -110,37 +110,54 @@ body {
     .section-container{
         background-color: var(--darkSub);
         border-radius: var(--borderrad);
+        margin: 1em;
+        .section-header{
+            display: flex;
+            flex-direction: column;
 
-        .section-title{
-            text-align: center;
-            color: var(--lightSubAlt);
-            margin-bottom: 0;
-            padding-top: 1%;
-        }
-        p{
-            text-align: center;
-            font-style: italic;
-            font-size: 14pt;
-            color: var(--lightSub);
-            margin: 0;
-            padding: 20px;
+            .section-title{
+                text-align: center;
+                color: var(--lightSubAlt);
+                margin-bottom: 0;
+                padding-top: 1%;
+            }
+            p{
+                text-align: center;
+                font-style: italic;
+                font-size: 14pt;
+                color: var(--lightSub);
+                margin: 0;
+                padding: 20px;
+            }
         }
         .sub-section-container{
             background-color: var(--lightSubAlt);
             border-radius: var(--borderrad);
             margin: 2%;
-            .sub-section-open{
-                height: 12pt;
-                transform: rotateX(180deg);
-                cursor: pointer;
-            }
-            .sub-section-title{
-                text-align: center;
-                font-size: 12pt;
-                color: var(--darkSubAlt);
-                padding: 10px;
-                margin: 0;
-                width: fit-content;
+            justify-content: center;
+            align-items: center;
+            .sub-section-header{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .sub-section-open{
+                    height: 12pt;
+                    transform: rotateX(180deg);
+                    cursor: pointer;
+                }
+                .sub-section-close{
+                    height: 12pt;
+                    transform: rotateX(0deg);
+                    cursor: pointer;
+                }
+                .sub-section-title{
+                    text-align: center;
+                    font-size: 12pt;
+                    color: var(--darkSubAlt);
+                    padding: 10px;
+                    margin: 0;
+                    width: fit-content;
+                }
             }
             .sub-section-content{
                 display: none;
@@ -162,7 +179,6 @@ body {
                     
                     margin: 3px;
                     background-color: var(--darkSubAlt);
-                    display: flex;
                     justify-content: center;
                     align-items: center;
                 }
@@ -189,6 +205,8 @@ body {
                     padding: 0px;
                     padding-bottom: 1%;
                     font-size: 12pt;
+                    cursor: pointer;
+                    width: fit-content;
                 }
             }
         }

@@ -1,53 +1,48 @@
-var today = new Date();
-var bday = new Date(2002,1,15);
-var millisecsInYear = 365*24*60*60*1000;
-var age = parseInt((today - bday)/millisecsInYear);
+let today = new Date();
+let bday = new Date(2002,1,15);
+let millisecsInYear = 365*24*60*60*1000;
+let age = parseInt((today - bday)/millisecsInYear);
 document.getElementById("about-me-age").innerHTML = age;
 
 document.getElementById("menu-open").addEventListener("click", (event)=>{
     document.getElementById("menu-dropdown").style.display = "block";
 });
+
 document.getElementById("menu-close").addEventListener("click", (event)=>{
     document.getElementById("menu-dropdown").style.display = "none";
 });
-for(var elem of document.getElementsByClassName("sub-section-open")){
-    let tempElem = elem;
-    tempElem.addEventListener("click", (event)=>{
-        if(event.target == tempElem){
-            for(var content of document.getElementsByClassName("sub-section-content")){
-                if(content.parentElement == tempElem.parentElement){
-                    content.style.display = (content.style.display != "flex")?"flex":"none";             
-                    for(var child of content.children){
-                        if(child.className == "content-description"){
-                            child.addEventListener("click", expandContent(content, tempElem.parentElement))
-                        }
-                    }
+
+for(let sectionOpen of document.getElementsByClassName("sub-section-open")){
+    let openTemp = sectionOpen;
+    openTemp.addEventListener("click", (event)=>{
+        console.log(openTemp)
+        if(openTemp.className == "sub-section-open"){
+            openTemp.className = "sub-section-close";
+            let container = openTemp.parentElement.parentElement;
+            for(let child of container.children){
+                if(child.className == "sub-section-content"){
+                    child.style.display = "flex";
                 }
             }
         }
-    });
-}
-
-function expandContent(content, container){
-    console.log("p is clicked!");
-    for(var child of content.children){
-        if(child.className == "content-slideshow"){
-            const stop = startSlideShow(child, 3000);
-            container.addEventListener("click", (event)=>{
-                if(container.children.item(0).style.display != "none"){
-                    stop();
+        else if(openTemp.className == "sub-section-close"){
+            openTemp.className = "sub-section-open";
+            let container = openTemp.parentElement.parentElement;
+            for(let child of container.children){
+                if(child.className == "sub-section-content"){
+                    child.style.display = "none";
                 }
-            })
+            }
         }
-    }
+    })
 }
 
 function startSlideShow(slideshow, interval){
-    var intervalID;
+    let intervalID;
     const fadeIn = [{opacity: 0.0},{opacity: 1.0}]
     const timing = {duration: 500, iterations:1};
 
-    for(var child of slideshow.children){
+    for(let child of slideshow.children){
         child.style.display = "none";
         if(child.id == "0"){
             child.style.display = "inherit";
@@ -61,11 +56,11 @@ function startSlideShow(slideshow, interval){
             return;
         }
         
-        var images = 0;
-        var currentImage = null;
+        let images = 0;
+        let currentImage = null;
     
-        for(var i = 0; i < ss.children.length; i++){
-            var img = ss.children.item(i);
+        for(let i = 0; i < ss.children.length; i++){
+            let img = ss.children.item(i);
             images += 1;
             if(img.style.display != "none"){
                 currentImage = i;
@@ -75,7 +70,7 @@ function startSlideShow(slideshow, interval){
             currentImage = 0;
         }
         
-        var img = ss.children.item(currentImage);
+        let img = ss.children.item(currentImage);
         img.style.display = "none"
         currentImage = (currentImage + 1) % images;
 
