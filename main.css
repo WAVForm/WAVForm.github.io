@@ -164,6 +164,10 @@ body {
                 justify-content: center;
                 align-items: center;
                 flex-direction: column;
+                background-color: var(--lightBase);
+                margin: 10px;
+                padding-top: 10px;
+                border-radius: var(--borderrad);
                 video{
                     display: none;
                     aspect-ratio: 16/9;
@@ -175,12 +179,25 @@ body {
                 .content-slideshow{
                     display: none;
                     aspect-ratio: 16/9;
-                    height: 45vw;
+                    height: auto;
                     
-                    margin: 3px;
+                    margin: 0px 20px;
                     background-color: var(--darkSubAlt);
                     justify-content: center;
                     align-items: center;
+                    .slideshow-slide{
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        img{
+                            display: inherit;
+                        }
+                        p{
+                            display: inherit;
+                            color: var(--lightSubAlt);
+                        }
+                    }
+
                 }
                 table{
                     border: 2px solid black;

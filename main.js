@@ -15,7 +15,6 @@ document.getElementById("menu-close").addEventListener("click", (event)=>{
 for(let sectionOpen of document.getElementsByClassName("sub-section-open")){
     let openTemp = sectionOpen;
     openTemp.addEventListener("click", (event)=>{
-        console.log(openTemp)
         if(openTemp.className == "sub-section-open"){
             openTemp.className = "sub-section-close";
             let container = openTemp.parentElement.parentElement;
@@ -37,15 +36,49 @@ for(let sectionOpen of document.getElementsByClassName("sub-section-open")){
     })
 }
 
-function startSlideShow(slideshow, interval){
+for(let sectionHeader of document.getElementsByClassName("sub-section-header")){
+    let headTemp = sectionHeader;
+    headTemp.addEventListener("click", (event)=>{
+        let open = sectionHeader.querySelector(".sub-section-open");
+        if(open){
+            open.click();
+        }
+        else{
+            sectionHeader.querySelector(".sub-section-close").click();
+        }
+    })
+}
+
+for(let sectionContent of document.getElementsByClassName("sub-section-content")){
+    let contTemp = sectionContent;
+    let stop;
+    contTemp.addEventListener("click", (event)=>{
+        for(let child of contTemp.children){
+            if(child.className == "content-slideshow"){
+                if(child.style.display != "flex"){
+                    child.style.display = "flex";
+                    stop = startSlideShow(child, 5);
+                    console.log(stop);
+                }
+                else{
+                    stop();
+                    child.style.display = "none";
+                }
+            }
+        }
+    })
+}
+
+function startSlideShow(slideshow, seconds){
     let intervalID;
+    let interval = seconds*1000;
     const fadeIn = [{opacity: 0.0},{opacity: 1.0}]
     const timing = {duration: 500, iterations:1};
 
     for(let child of slideshow.children){
         child.style.display = "none";
         if(child.id == "0"){
-            child.style.display = "inherit";
+            child.style.display = "flex";
             child.animate(fadeIn, timing);
         }
     }
