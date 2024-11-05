@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Oi&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    /*Color Palette*/
+    --mainColor: #416450;
+    --mainLight: #C6E5B6;
+    --mainDark: #25312A;
+
+    --baseColor: #334B3D;
+    --altColor: #2C3E34;
+    /*Color Palette*/
+
+    --borderrad: 10px;
+}
+
+html[display_mode="dark"]{
+    --baseColor: #334B3D;
+    --altColor: #2C3E34;
+}
+
+html[display_mode="light"]{
+    --baseColor: #96BE99;
+    --altColor: #6C8D70;
+}
+
+html {
+    scroll-behavior: smooth;
+    body {
+        font-family: 'Oi', 'Roboto';
+        background-color: var(--baseColor);
+        h1,h2,h3,h4,h5,h6{
+            color: var(--mainLight);
+            text-shadow: 0px 2px var(--mainDark);
+        }
+        section{
+            background-color: var(--altColor);
+            h1.section_title{
+                font-size: 32pt;
+            }
+            div.section_dropdown{
+                background-color: var(--mainColor);
+                h2.section_dropdown_title{
+                    font-size: 20pt;
+                }
+                div.section_dropdown_content{
+                    div.sub_section_dropdown{
+                        background-color: var(--baseColor);
+                        h3.sub_section_dropdown_title{
+                            font-size:16pt;
+                        }
+                        div.sub_section_dropdown_content{
+    
+                        }
+                    }
+                }
+            }
+    
+            section#navbar{
+                background-color: var(--mainColor);
+            }
+            section#menu{
+                div#menu_icons{
+                    img{
+                        fill: var(--mainLight);
+                    }
+                }
+                div#menu_darken{
+                    width: 100vw;
+                    height: 100vh;
+                    color: rgba(0, 0, 0, 0.75);
+                }
+            }
+            section#home{
+                button{
+                    background-color: var(--mainColor);
+                }
+            }
+        }
+    }
+}
