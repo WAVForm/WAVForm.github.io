@@ -26,13 +26,16 @@ html[display_mode="light"]{
 html {
     scroll-behavior: smooth;
     body {
+        margin: 0px;
         font-family: 'Oi', 'Roboto';
         background-color: var(--baseColor);
         h1,h2,h3,h4,h5,h6{
             color: var(--mainLight);
             text-shadow: 0px 2px var(--mainDark);
+            margin: 0px;
         }
         section{
+            text-align: center;
             background-color: var(--altColor);
             h1.section_title{
                 font-size: 32pt;
@@ -54,26 +57,73 @@ html {
                     }
                 }
             }
-    
-            section#navbar{
-                background-color: var(--mainColor);
+            a{
+                text-decoration: none;
+                color: var(--mainLight)
             }
-            section#menu{
-                div#menu_icons{
-                    img{
-                        fill: var(--mainLight);
+        }
+        section#navbar{
+            width: 100vw;
+            height: 50px;
+            background-color: var(--mainColor);
+            img.menu_button{
+                width: 35px;
+                height: 35px;
+                position: relative;
+                top: 50%;
+                left: calc(50% - 10px);
+                transform: translate(-100%, -50%);
+            }
+        }
+        section#menu{
+            div{
+                display: block;
+                width: 100vw;
+                height: 100px;
+                border: solid 1px rgba(0,0,0,0.1);
+            }
+            a{
+                display: block;
+                width: 100vw;
+                height: 100px;
+                border: solid 1px rgba(0,0,0,0.1);
+                font-size: 40pt;
+                line-height: 100px;
+            }
+            div#menu_settings{
+                height: 50px;
+                label{
+                    display: block;
+                    width: 75px;
+                    height: 35px;
+                    position: relative;
+                    left: calc(100% - 3px);
+                    top: calc(100% - 50%);
+                    transform: translate(-100%, -50%);
+                    input{
+                        display: block;
+                        width: inherit;
+                        height: inherit;
+                        margin: 0px;
                     }
                 }
-                div#menu_darken{
-                    width: 100vw;
-                    height: 100vh;
-                    color: rgba(0, 0, 0, 0.75);
+            }
+            div#menu_icons{
+                img{
+                    fill: var(--mainLight);
+                    width: 50px;
+                    height: 50px;
                 }
             }
-            section#home{
-                button{
-                    background-color: var(--mainColor);
-                }
+            div#menu_darken{
+                width: 100vw;
+                height: 100vh;
+                color: rgba(0, 0, 0, 0.75);
+            }
+        }
+        section#home{
+            button{
+                background-color: var(--mainColor);
             }
         }
     }
