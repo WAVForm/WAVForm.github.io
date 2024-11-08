@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oi&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 
 :root {
     /*Color Palette*/
@@ -10,120 +10,251 @@
     --altColor: #2C3E34;
     /*Color Palette*/
 
-    --borderrad: 10px;
+    --borderrad: 30px;
+    --section_distance: 20px
 }
 
-html[display_mode="dark"]{
+html[display_mode="dark"] {
     --baseColor: #334B3D;
     --altColor: #2C3E34;
 }
 
-html[display_mode="light"]{
+html[display_mode="light"] {
     --baseColor: #96BE99;
     --altColor: #6C8D70;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+
     body {
         margin: 0px;
-        font-family: 'Oi', 'Roboto';
+        font-family: 'Silkscreen', 'Roboto';
+        text-shadow: 0px 2px var(--mainDark);
         background-color: var(--baseColor);
-        h1,h2,h3,h4,h5,h6{
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
             color: var(--mainLight);
-            text-shadow: 0px 2px var(--mainDark);
             margin: 0px;
         }
-        section{
+
+        section {
+            display: flex;
+            align-items: center;
+            scroll-margin: 70px;
             text-align: center;
-            background-color: var(--altColor);
-            h1.section_title{
-                font-size: 32pt;
-            }
-            div.section_dropdown{
-                background-color: var(--mainColor);
-                h2.section_dropdown_title{
-                    font-size: 20pt;
+            z-index: -2;
+            width: 100vw;
+            height: fit-content;
+            min-height: calc(100vh - 50px - var(--section_distance) - 20px);
+            max-height: fit-content;
+            margin-top: calc(var(--section_distance));
+            margin-bottom: calc(var(--section_distance) + 45px);
+
+            div.section_content {
+                width: 100%;
+                background-color: var(--altColor);
+                border-radius: var(--borderrad);
+                padding-bottom: 15px;
+
+                h1.section_title {
+                    height: 50px;
+                    font-size: 32px;
+                    line-height: 50px;
+                    position: relative;
+                    top: 20px;
+                    margin-bottom: 20px;
                 }
-                div.section_dropdown_content{
-                    div.sub_section_dropdown{
-                        background-color: var(--baseColor);
-                        h3.sub_section_dropdown_title{
-                            font-size:16pt;
-                        }
-                        div.sub_section_dropdown_content{
-    
+
+                div.section_dropdown {
+                    background-color: var(--mainColor);
+                    margin-bottom: 10px;
+
+                    h2.section_dropdown_title {
+                        height: 50px;
+                        font-size: 20px;
+                        line-height: 50px;
+                    }
+
+                    div.section_dropdown_content {
+                        height: 0px;
+                        visibility: hidden;
+                        padding-bottom: 5px;
+
+                        div.sub_section_dropdown {
+                            background-color: var(--mainLight);
+                            height: inherit;
+                            visibility: inherit;
+                            margin-bottom: 10px;
+
+                            h3.sub_section_dropdown_title {
+                                height: inherit;
+                                visibility: inherit;
+                                height: 50px;
+                                font-size: 16px;
+                                line-height: 50px;
+                                color: var(--mainDark);
+                                text-shadow: 0px 2px var(--mainLight);
+                            }
+
+                            div.sub_section_dropdown_content {
+                                display: flex;
+                                flex-direction: column;
+                                max-height: 250px;
+                                height: 0px;
+                                visibility: hidden;
+
+                                p.sub_section_dropdown_content_caption {
+                                    margin: 0px;
+                                    margin-top: auto;
+                                    font-size: 12px;
+                                    line-height: 12px;
+                                    height: 50px;
+                                }
+
+                            }
                         }
                     }
                 }
+
+                a {
+                    text-decoration: none;
+                    color: var(--mainLight)
+                }
             }
-            a{
-                text-decoration: none;
-                color: var(--mainLight)
-            }
+
         }
-        section#navbar{
+
+        section#navbar {
+            display: block;
+            position: fixed;
+            top: 0px;
             width: 100vw;
+            min-height: 50px;
             height: 50px;
             background-color: var(--mainColor);
-            img.menu_button{
-                width: 35px;
-                height: 35px;
+            border-radius: 0%;
+            margin-top: 0px;
+            z-index: 1;
+
+            img#menu_button {
+                width: 45px;
+                height: 45px;
                 position: relative;
                 top: 50%;
-                left: calc(50% - 10px);
+                left: 50%;
                 transform: translate(-100%, -50%);
             }
         }
-        section#menu{
-            div{
+
+        section#menu {
+            display: block;
+            visibility: hidden;
+            position: fixed;
+            min-height: 0px;
+            top: 50px;
+            background-color: var(--altColor);
+            margin-top: 0px;
+            z-index: 1;
+
+            div.section_content {
+                position: relative;
+                padding-bottom: 0px;
                 display: block;
-                width: 100vw;
-                height: 100px;
-                border: solid 1px rgba(0,0,0,0.1);
-            }
-            a{
-                display: block;
-                width: 100vw;
-                height: 100px;
-                border: solid 1px rgba(0,0,0,0.1);
-                font-size: 40pt;
-                line-height: 100px;
-            }
-            div#menu_settings{
-                height: 50px;
-                label{
+                top: 0px;
+                transform: translateY(-0px);
+                border-radius: 0px;
+
+                div {
                     display: block;
-                    width: 75px;
-                    height: 35px;
-                    position: relative;
-                    left: calc(100% - 3px);
-                    top: calc(100% - 50%);
-                    transform: translate(-100%, -50%);
-                    input{
+                    width: 100vw;
+                    height: 100px;
+                    border: solid 1px rgba(0, 0, 0, 0.1);
+                }
+
+                a {
+                    display: block;
+                    width: 100vw;
+                    height: 100px;
+                    border: solid 1px rgba(0, 0, 0, 0.1);
+                    font-size: 40px;
+                    line-height: 100px;
+                }
+
+                div#menu_settings {
+                    height: 50px;
+
+                    label {
                         display: block;
-                        width: inherit;
-                        height: inherit;
-                        margin: 0px;
+                        width: 75px;
+                        height: 35px;
+                        position: relative;
+                        left: calc(100% - 3px);
+                        top: calc(100% - 50%);
+                        transform: translate(-100%, -50%);
+
+                        input {
+                            display: block;
+                            width: inherit;
+                            height: inherit;
+                            margin: 0px;
+                        }
                     }
                 }
-            }
-            div#menu_icons{
-                img{
-                    fill: var(--mainLight);
-                    width: 50px;
-                    height: 50px;
+
+                div#menu_icons {
+                    img {
+                        fill: var(--mainLight);
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+
+                div#menu_darken {
+                    position: absolute;
+                    left: 0px;
+                    width: 100vw;
+                    height: 100vh;
+                    background-color: rgba(0, 0, 0, 0.75);
                 }
             }
-            div#menu_darken{
-                width: 100vw;
-                height: 100vh;
-                color: rgba(0, 0, 0, 0.75);
-            }
         }
-        section#home{
-            button{
-                background-color: var(--mainColor);
+
+        section#home {
+            margin-top: calc(var(--section_distance) + 50px);
+
+            h1 {
+                font-size: 32px;
+            }
+
+            div.section_content {
+                height: 300px;
+
+                div#home_buttons {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    justify-content: space-around;
+                    align-items: center;
+                    height: calc(100% - 68px);
+
+                    a {
+                        flex-shrink: 0;
+                        display: inline-block;
+                        text-align: center;
+                        font-size: 14px;
+                        background-color: var(--mainColor);
+                        border-radius: var(--borderrad);
+                        line-height: 45px;
+                        width: 120px;
+                        height: 45px;
+                    }
+                }
             }
         }
     }
