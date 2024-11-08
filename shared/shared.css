@@ -56,6 +56,7 @@ html {
             max-height: fit-content;
             margin-top: calc(var(--section_distance));
             margin-bottom: calc(var(--section_distance) + 45px);
+            scroll-snap-align: start;
 
             div.section_content {
                 width: 100%;
@@ -64,11 +65,8 @@ html {
                 padding-bottom: 15px;
 
                 h1.section_title {
-                    height: 50px;
-                    font-size: 32px;
-                    line-height: 50px;
-                    position: relative;
-                    top: 20px;
+                    font-size: 6vmax;
+                    margin-top: 20px;
                     margin-bottom: 20px;
                 }
 
@@ -77,9 +75,10 @@ html {
                     margin-bottom: 10px;
 
                     h2.section_dropdown_title {
-                        height: 50px;
-                        font-size: 20px;
-                        line-height: 50px;
+                        height: 4vmax;
+                        font-size: 4vmax;
+                        line-height: 4vmax;
+                        padding: 10px;
                     }
 
                     div.section_dropdown_content {
@@ -96,9 +95,9 @@ html {
                             h3.sub_section_dropdown_title {
                                 height: inherit;
                                 visibility: inherit;
-                                height: 50px;
-                                font-size: 16px;
-                                line-height: 50px;
+                                font-size: 3vmax;
+                                line-height: 3vmax;
+                                padding: 10px;
                                 color: var(--mainDark);
                                 text-shadow: 0px 2px var(--mainLight);
                             }
@@ -113,9 +112,10 @@ html {
                                 p.sub_section_dropdown_content_caption {
                                     margin: 0px;
                                     margin-top: auto;
-                                    font-size: 12px;
-                                    line-height: 12px;
-                                    height: 50px;
+                                    height: fit-content;
+                                    font-size: 14px;
+                                    line-height: 14px;
+                                    padding: 10px;
                                 }
 
                             }
@@ -136,16 +136,15 @@ html {
             position: fixed;
             top: 0px;
             width: 100vw;
-            min-height: 50px;
-            height: 50px;
+            height: 80px;
+            min-height: 80px;
             background-color: var(--mainColor);
             border-radius: 0%;
             margin-top: 0px;
             z-index: 1;
 
             img#menu_button {
-                width: 45px;
-                height: 45px;
+                height: 50px;
                 position: relative;
                 top: 50%;
                 left: 50%;
@@ -158,7 +157,7 @@ html {
             visibility: hidden;
             position: fixed;
             min-height: 0px;
-            top: 50px;
+            top: 80px;
             background-color: var(--altColor);
             margin-top: 0px;
             z-index: 1;
@@ -175,44 +174,61 @@ html {
                     display: block;
                     width: 100vw;
                     height: 100px;
-                    border: solid 1px rgba(0, 0, 0, 0.1);
+                    border: solid 5px rgba(0, 0, 0, 0.1);
                 }
 
                 a {
                     display: block;
                     width: 100vw;
                     height: 100px;
-                    border: solid 1px rgba(0, 0, 0, 0.1);
-                    font-size: 40px;
+                    border: solid 5px rgba(0, 0, 0, 0.1);
+                    font-size: 48px;
                     line-height: 100px;
                 }
 
                 div#menu_settings {
-                    height: 50px;
+                    height: 100px;
 
-                    label {
+                    label#toggle_label {
                         display: block;
-                        width: 75px;
-                        height: 35px;
+                        width: 100px;
+                        height: 50px;
                         position: relative;
-                        left: calc(100% - 3px);
+                        left: calc(100% - 20px);
                         top: calc(100% - 50%);
                         transform: translate(-100%, -50%);
+                        background-color: var(--baseColor);
+                        border-radius: 100px;
 
-                        input {
+                        input#menu_settings_theme_toggle {
+                            visibility: hidden;
                             display: block;
                             width: inherit;
                             height: inherit;
                             margin: 0px;
                         }
                     }
+
+                    div#toggle_ball {
+                        display: block;
+                        content: '';
+                        position: relative;
+                        left: 0px;
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 100px;
+                        box-sizing: border-box;
+                        background-color: var(--mainDark);
+                    }
                 }
 
                 div#menu_icons {
+                    height: 100px;
+
                     img {
                         fill: var(--mainLight);
-                        width: 50px;
-                        height: 50px;
+                        width: 80px;
+                        height: 80px;
                     }
                 }
 
@@ -234,25 +250,194 @@ html {
             }
 
             div.section_content {
-                height: 300px;
+                height: fit-content;
 
                 div#home_buttons {
                     display: flex;
                     flex-wrap: nowrap;
                     justify-content: space-around;
                     align-items: center;
-                    height: calc(100% - 68px);
+                    height: fit-content;
 
                     a {
                         flex-shrink: 0;
                         display: inline-block;
                         text-align: center;
-                        font-size: 14px;
                         background-color: var(--mainColor);
                         border-radius: var(--borderrad);
-                        line-height: 45px;
-                        width: 120px;
-                        height: 45px;
+                        font-size: 20px;
+                        line-height: 50px;
+                        width: fit-content;
+                        height: 50px;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width:768px) {
+    html {
+        body {
+            section {
+                min-height: calc(100vh - 50px - var(--section_distance) - 20px);
+                margin-top: calc(var(--section_distance));
+                margin-bottom: calc(var(--section_distance) + 45px);
+
+                div.section_content {
+                    width: 100%;
+                    padding-bottom: 15px;
+
+                    h1.section_title {
+                        font-size: 48px;
+                        margin-top: 20px;
+                        margin-bottom: 20px;
+                    }
+
+                    div.section_dropdown {
+                        margin-bottom: 10px;
+
+                        h2.section_dropdown_title {
+                            height: 32px;
+                            font-size: 32px;
+                            line-height: 32px;
+                            padding: 10px;
+                        }
+
+                        div.section_dropdown_content {
+                            height: 0px;
+                            visibility: hidden;
+                            padding-bottom: 5px;
+
+                            div.sub_section_dropdown {
+                                background-color: var(--mainLight);
+                                height: inherit;
+                                visibility: inherit;
+                                margin-bottom: 10px;
+
+                                h3.sub_section_dropdown_title {
+                                    height: inherit;
+                                    visibility: inherit;
+                                    height: 28px;
+                                    font-size: 28px;
+                                    line-height: 28px;
+                                    padding: 10px;
+                                }
+
+                                div.sub_section_dropdown_content {
+                                    display: flex;
+                                    flex-direction: column;
+                                    max-height: 250px;
+                                    height: 0px;
+                                    visibility: hidden;
+
+                                    p.sub_section_dropdown_content_caption {
+                                        margin: 0px;
+                                        margin-top: auto;
+                                        height: fit-content;
+                                        font-size: 18px;
+                                        line-height: 18px;
+                                        padding: 10px;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            section#navbar {
+                display: block;
+                position: fixed;
+                top: 0px;
+                width: 100vw;
+                height: 50px;
+                min-height: 50px;
+                margin-top: 0px;
+                z-index: 1;
+
+                img#menu_button {
+                    height: 35px;
+                    position: relative;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-100%, -50%);
+                }
+            }
+
+            section#menu {
+                display: block;
+                visibility: hidden;
+                position: fixed;
+                min-height: 0px;
+                top: 50px;
+                margin-top: 0px;
+                z-index: 1;
+
+                div.section_content {
+
+                    div {
+                        display: block;
+                        width: 100vw;
+                        height: 100px;
+                    }
+
+                    a {
+                        display: block;
+                        width: 100vw;
+                        height: 100px;
+                        font-size: 48px;
+                        line-height: 100px;
+                    }
+
+                    div#menu_settings {
+                        height: 100px;
+
+                        label#toggle_label {
+                            width: 100px;
+                            height: 50px;
+                            position: relative;
+                            left: calc(100% - 20px);
+                        }
+                    }
+
+                    div#menu_icons {
+                        height: 100px;
+
+                        img {
+                            width: 50px;
+                            height: 50px;
+                        }
+                    }
+                }
+            }
+
+            section#home {
+                margin-top: calc(var(--section_distance) + 50px);
+
+                h1 {
+                    font-size: 48px;
+                }
+
+                div.section_content {
+                    height: fit-content;
+                    padding: 20px;
+
+                    div#home_buttons {
+                        display: flex;
+                        flex-wrap: nowrap;
+                        justify-content: space-around;
+                        align-items: center;
+                        height: fit-content;
+
+                        a {
+                            font-size: 32px;
+                            line-height: 50px;
+                            height: 50px;
+                        }
                     }
                 }
             }
