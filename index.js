@@ -40,7 +40,7 @@ for (let drop of document.getElementsByClassName("sub_section_dropdown_title")) 
     drop.addEventListener("click", () => {
         let sibling = drop.nextElementSibling;
         if (!sibling.checkVisibility({ checkVisibilityCSS: true })) {
-            sibling.style.height = "250px";
+            sibling.style.height = "auto";
             sibling.style.visibility = "visible";
         }
         else {

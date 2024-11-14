@@ -48,12 +48,8 @@ html {
             scroll-margin: 70px;
             text-align: center;
             z-index: -2;
-            width: 100vw;
-            height: fit-content;
             min-height: calc(100vh - 50px - var(--section_distance) - 20px);
-            max-height: fit-content;
             margin-top: calc(var(--section_distance));
-            margin-bottom: calc(var(--section_distance) + 45px);
             scroll-snap-align: start;
 
             div.section_content {
@@ -63,7 +59,6 @@ html {
                 padding-bottom: 15px;
 
                 h1.section_title {
-                    font-size: 6vmax;
                     margin-top: 20px;
                     margin-bottom: 20px;
                 }
@@ -73,9 +68,6 @@ html {
                     margin-bottom: 10px;
 
                     h2.section_dropdown_title {
-                        height: 4vmax;
-                        font-size: 4vmax;
-                        line-height: 4vmax;
                         padding: 10px;
                     }
 
@@ -93,8 +85,6 @@ html {
                             h3.sub_section_dropdown_title {
                                 height: inherit;
                                 visibility: inherit;
-                                font-size: 3vmax;
-                                line-height: 3vmax;
                                 padding: 10px;
                                 color: var(--mainDark);
                                 text-shadow: 0px 2px var(--mainLight);
@@ -108,48 +98,46 @@ html {
                                 visibility: hidden;
 
                                 p.sub_section_dropdown_content_caption {
-                                    margin: 0px;
-                                    margin-top: auto;
+                                    font-style: italic;
                                     height: fit-content;
-                                    font-size: 14px;
-                                    line-height: 14px;
                                     padding: 10px;
                                     color: var(--mainDark);
                                     text-shadow: 0px 2px var(--mainLight);
                                 }
-
-                                .sub_section_dropdown_content_list {
-                                    color: var(--mainDark);
-                                    text-shadow: 0px 2px var(--mainLight);
-                                    font-weight: bolder;
-                                    list-style: circle;
-                                    margin: auto;
-
-                                    li {
-                                        width: fit-content;
-
-                                        a {
-                                            color: var(--mainColor);
-                                        }
-                                    }
-                                }
                             }
                         }
 
-                        p.sub_section_body {
+                        .section_dropdown_content_list {
+                            font-weight: bolder;
+                            margin: auto;
+                            padding: 0px;
+                            width: fit-content;
+                            color: var(--mainLight);
+                            padding: 15px;
+
+                            li {
+                                font-weight: lighter;
+                                margin: inherit;
+                                width: inherit;
+                                color: inherit;
+                                text-shadow: inherit;
+                            }
+                        }
+
+                        p.section_dropdown_content_caption {
+                            font-style: italic;
                             height: inherit;
                             visibility: inherit;
                             font-weight: bolder;
                             margin: 0px;
                             padding: 10px;
                             color: var(--mainLight);
-                            text-shadow: 0px 2px var(--mainDark);
                         }
                     }
                 }
 
                 a {
-                    text-decoration: none;
+                    text-decoration: underline;
                     color: var(--mainLight)
                 }
             }
@@ -208,7 +196,9 @@ html {
                     height: 100px;
                     border: solid 5px rgba(0, 0, 0, 0.1);
                     font-size: 48px;
+                    font-weight: bolder;
                     line-height: 100px;
+                    text-decoration: none;
                 }
 
                 div#menu_settings {
@@ -270,10 +260,6 @@ html {
         section#home {
             margin-top: calc(var(--section_distance) + 50px);
 
-            h1 {
-                font-size: 32px;
-            }
-
             div.section_content {
                 height: fit-content;
 
@@ -291,9 +277,10 @@ html {
                         background-color: var(--mainColor);
                         border-radius: var(--borderrad);
                         font-size: 20px;
-                        line-height: 50px;
+                        text-decoration: none;
+                        line-height: 35px;
                         width: fit-content;
-                        height: 50px;
+                        height: 35px;
                         padding: 10px;
                     }
                 }
@@ -302,170 +289,4 @@ html {
     }
 }
 
-@media only screen and (min-width:768px) {
-    html {
-        body {
-            section {
-                min-height: calc(100vh - 50px - var(--section_distance) - 20px);
-                margin-top: calc(var(--section_distance));
-                margin-bottom: calc(var(--section_distance) + 45px);
-
-                div.section_content {
-                    width: 100%;
-                    padding-bottom: 15px;
-
-                    h1.section_title {
-                        font-size: 48px;
-                        margin-top: 20px;
-                        margin-bottom: 20px;
-                    }
-
-                    div.section_dropdown {
-                        margin-bottom: 10px;
-
-                        h2.section_dropdown_title {
-                            height: 32px;
-                            font-size: 32px;
-                            line-height: 32px;
-                            padding: 10px;
-                        }
-
-                        div.section_dropdown_content {
-                            height: 0px;
-                            visibility: hidden;
-                            padding-bottom: 5px;
-
-                            div.sub_section_dropdown {
-                                background-color: var(--mainLight);
-                                height: inherit;
-                                visibility: inherit;
-                                margin-bottom: 10px;
-
-                                h3.sub_section_dropdown_title {
-                                    height: inherit;
-                                    visibility: inherit;
-                                    height: 28px;
-                                    font-size: 28px;
-                                    line-height: 28px;
-                                    padding: 10px;
-                                }
-
-                                div.sub_section_dropdown_content {
-                                    display: flex;
-                                    flex-direction: column;
-                                    max-height: 250px;
-                                    height: 0px;
-                                    visibility: hidden;
-
-                                    p.sub_section_dropdown_content_caption {
-                                        margin: 0px;
-                                        margin-top: auto;
-                                        height: fit-content;
-                                        font-size: 18px;
-                                        line-height: 18px;
-                                        padding: 10px;
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
-
-            section#navbar {
-                display: block;
-                position: fixed;
-                top: 0px;
-                width: 100vw;
-                height: 50px;
-                min-height: 50px;
-                margin-top: 0px;
-                z-index: 1;
-
-                img#menu_button {
-                    height: 35px;
-                    position: relative;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-100%, -50%);
-                }
-            }
-
-            section#menu {
-                display: block;
-                visibility: hidden;
-                position: fixed;
-                min-height: 0px;
-                top: 50px;
-                margin-top: 0px;
-                z-index: 1;
-
-                div.section_content {
-
-                    div {
-                        display: block;
-                        width: 100vw;
-                        height: 100px;
-                    }
-
-                    a {
-                        display: block;
-                        width: 100vw;
-                        height: 100px;
-                        font-size: 48px;
-                        line-height: 100px;
-                    }
-
-                    div#menu_settings {
-                        height: 100px;
-
-                        label#toggle_label {
-                            width: 100px;
-                            height: 50px;
-                            position: relative;
-                            left: calc(100% - 20px);
-                        }
-                    }
-
-                    div#menu_icons {
-                        height: 100px;
-
-                        img {
-                            width: 50px;
-                            height: 50px;
-                        }
-                    }
-                }
-            }
-
-            section#home {
-                margin-top: calc(var(--section_distance) + 50px);
-
-                h1 {
-                    font-size: 48px;
-                }
-
-                div.section_content {
-                    height: fit-content;
-                    padding: 20px;
-
-                    div#home_buttons {
-                        display: flex;
-                        flex-wrap: nowrap;
-                        justify-content: space-around;
-                        align-items: center;
-                        height: fit-content;
-
-                        a {
-                            font-size: 32px;
-                            line-height: 50px;
-                            height: 50px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+@media only screen and (min-width:768px) {}
