@@ -17,8 +17,6 @@ for (let drop of document.getElementsByClassName("section_dropdown_title")) {
         if (!sibling.checkVisibility({ checkVisibilityCSS: true })) {
             sibling.style.height = "auto";
             sibling.style.visibility = "visible";
-            let coords = sibling.getBoundingClientRect();
-            window.scrollTo(0, coords.y + window.scrollY - coords.height);
         }
         else {
             sibling.style.height = "0px";
@@ -35,8 +33,6 @@ for (let drop of document.getElementsByClassName("section_dropdown_title")) {
                     }
                 }
             }
-            let coords = drop.getBoundingClientRect();
-            window.scrollTo(0, window.scrollY - coords.height);
         }
     });
 }
