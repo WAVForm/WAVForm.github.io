@@ -5,20 +5,18 @@ html {
     scroll-snap-type: y mandatory;
 
     body {
-        section {
+        section:not(section#navbar, section#menu) {
             display: flex;
             align-items: center;
             scroll-margin: 70px;
             text-align: center;
             z-index: -2;
             min-height: calc(100vh - 50px - var(--section_distance) - 20px);
-            margin-top: calc(var(--section_distance));
             scroll-snap-align: start;
 
             div.section_content {
                 width: 100%;
                 background-color: var(--altColor);
-                border-radius: var(--borderrad);
                 padding-bottom: 15px;
 
                 h1.section_title {
@@ -37,7 +35,6 @@ html {
                     div.section_dropdown_content {
                         height: 0px;
                         visibility: hidden;
-                        padding-bottom: 5px;
 
                         div.sub_section_dropdown {
                             background-color: var(--mainLight);
@@ -56,14 +53,11 @@ html {
                             div.sub_section_dropdown_content {
                                 display: flex;
                                 flex-direction: column;
-                                max-height: 250px;
                                 height: 0px;
                                 visibility: hidden;
 
                                 p.sub_section_dropdown_content_caption {
                                     font-style: italic;
-                                    height: fit-content;
-                                    padding: 10px;
                                     color: var(--mainDark);
                                     text-shadow: 0px 2px var(--mainLight);
                                 }
@@ -74,17 +68,11 @@ html {
                             list-style: none;
                             font-weight: bolder;
                             margin: auto;
-                            padding: 0px;
-                            width: fit-content;
                             color: var(--mainLight);
                             padding: 10px;
 
                             li {
                                 font-weight: lighter;
-                                margin: inherit;
-                                width: inherit;
-                                color: inherit;
-                                text-shadow: inherit;
                                 padding: 5px;
                             }
                         }
@@ -118,9 +106,7 @@ html {
 
                         p.section_dropdown_content_caption {
                             font-style: italic;
-                            height: inherit;
                             visibility: inherit;
-                            font-weight: bolder;
                             margin: 0px;
                             padding: 10px;
                             color: var(--mainLight);
@@ -136,35 +122,21 @@ html {
 
         }
 
-
-
-
-
         section#home {
-            margin-top: calc(var(--section_distance) + 50px);
-
             div.section_content {
                 height: fit-content;
 
                 div#home_buttons {
                     display: flex;
-                    flex-wrap: nowrap;
-                    justify-content: space-around;
-                    align-items: center;
-                    height: fit-content;
                     margin-bottom: 10px;
 
                     a {
                         flex: 1;
-                        display: inline-block;
-                        text-align: center;
                         background-color: var(--mainColor);
                         border-radius: var(--borderrad);
                         font-size: 20px;
                         text-decoration: none;
                         line-height: 35px;
-                        width: fit-content;
-                        height: 35px;
                         padding: 10px;
                         margin-left: 5px;
                         margin-right: 5px;

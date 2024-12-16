@@ -45,19 +45,13 @@ html {
     section#navbar {
         display: block;
         position: fixed;
-        top: 0px; /*delete*/
         width: 100vw;
         height: 80px;
-        min-height: 80px; /*delete*/
         background-color: var(--mainColor);
-        border-radius: 0%; /*delete*/
-        margin-top: 0px; /*delete*/
-        z-index: 1; /*delete*/
 
         div#menu_button {
             display: flex;
             flex-direction: column;
-            align-items: stretch; /*delete*/
             justify-content: center;
             width: 50px;
             height: 50px;
@@ -66,10 +60,6 @@ html {
             left: 100%;
             top: 50%;
             transform: translate(-100%, -50%);
-
-            :first-child {/*delete*/
-                margin-top: 0px;/*delete*/
-            }/*delete*/
 
             div {
                 height: 5px;
@@ -80,44 +70,31 @@ html {
     }
 
     section#menu {
-        display: block;/*delete*/
         visibility: hidden;
         position: fixed;
-        min-height: 0px;/*delete*/
         top: 80px;
         background-color: var(--altColor);
-        margin-top: 0px;/*delete*/
-        z-index: 1;/*delete*/
 
         div.section_content {
-            position: relative;
-            padding-bottom: 0px;
-            display: block;
-            top: 0px;
-            transform: translateY(-0px);
-            border-radius: 0px;
 
             div {
-                display: block;
-                width: 100vw;
                 height: 100px;
-                border: solid 5px rgba(0, 0, 0, 0.1);
+                border: solid 5px rgba(0, 0, 0, 0.1); /*change*/
             }
 
             a {
                 display: block;
                 width: 100vw;
-                text-wrap: nowrap;
-                height: 100px;
                 border: solid 5px rgba(0, 0, 0, 0.1);
                 font-size: 48px;
                 font-weight: bolder;
                 line-height: 100px;
                 text-decoration: none;
+                text-align: center;
+                color: var(--mainLight);
             }
 
             div#menu_settings {
-                height: 100px;
 
                 label#toggle_label {
                     display: block;
@@ -132,18 +109,11 @@ html {
 
                     input#menu_settings_theme_toggle {
                         visibility: hidden;
-                        display: block;
-                        width: inherit;
-                        height: inherit;
-                        margin: 0px;
                     }
                 }
 
                 div#toggle_ball {
-                    display: block;
-                    content: '';
                     position: relative;
-                    left: 0px;
                     width: 50px;
                     height: 50px;
                     border-radius: 100px;
@@ -156,7 +126,6 @@ html {
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
-                height: 100px;
 
                 a {
                     width: 80px;
@@ -172,7 +141,6 @@ html {
 
             div#menu_darken {
                 position: absolute;
-                left: 0px;
                 width: 100vw;
                 height: 100vh;
                 background-color: rgba(0, 0, 0, 0.75);
