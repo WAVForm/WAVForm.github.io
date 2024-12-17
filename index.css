@@ -10,34 +10,39 @@ html {
             align-items: center;
             scroll-margin: 70px;
             text-align: center;
-            z-index: -2;
             min-height: calc(100vh - 50px - var(--section_distance) - 20px);
             scroll-snap-align: start;
 
             div.section_content {
                 width: 100%;
-                background-color: var(--altColor);
                 padding-bottom: 15px;
 
                 h1.section_title {
+                    margin: auto;
                     margin-top: 20px;
                     margin-bottom: 20px;
+                    font-size: 32pt;
+                    width: fit-content;
+                    border-bottom: 1px solid var(--altColor);
                 }
 
                 div.section_dropdown {
-                    background-color: var(--mainColor);
+                    background-color: var(--altColor);
                     margin-bottom: 10px;
 
                     h2.section_dropdown_title {
+                        margin: 0px;
                         padding: 10px;
+                        color: var(--baseColor)
                     }
 
                     div.section_dropdown_content {
                         height: 0px;
                         visibility: hidden;
+                        padding-bottom: 5px;
 
                         div.sub_section_dropdown {
-                            background-color: var(--mainLight);
+                            background-color: var(--baseColor);
                             height: inherit;
                             visibility: inherit;
                             margin-bottom: 10px;
@@ -45,9 +50,9 @@ html {
                             h3.sub_section_dropdown_title {
                                 height: inherit;
                                 visibility: inherit;
+                                margin: 0px;
                                 padding: 10px;
-                                color: var(--mainDark);
-                                text-shadow: 0px 2px var(--mainLight);
+                                color: var(--altColor);
                             }
 
                             div.sub_section_dropdown_content {
@@ -59,7 +64,7 @@ html {
                                 p.sub_section_dropdown_content_caption {
                                     font-style: italic;
                                     color: var(--mainDark);
-                                    text-shadow: 0px 2px var(--mainLight);
+
                                 }
                             }
                         }
@@ -68,10 +73,12 @@ html {
                             list-style: none;
                             font-weight: bolder;
                             margin: auto;
-                            color: var(--mainLight);
+                            color: var(--baseColor);
                             padding: 10px;
 
                             li {
+                                text-decoration: underline;
+                                text-shadow: 0px 0px 5px var(--baseColor);
                                 font-weight: lighter;
                                 padding: 5px;
                             }
@@ -79,28 +86,20 @@ html {
 
                         .section_dropdown_content_slideshow {
                             display: flex;
-                            background-color: var(--mainDark);
                             height: 250px;
                             align-items: center;
                             justify-content: space-around;
 
                             .section_dropdown_content_slideshow_left,
                             .section_dropdown_content_slideshow_right {
-                                width: 40px;
-                                height: 40px;
+                                width: 80px;
+                                height: 80px;
+                                fill: var(--baseColor)
                             }
 
                             .section_dropdown_content_slideshow_image {
                                 width: 240px;
                                 height: 240px;
-                            }
-
-                            .section_dropdown_content_slideshow_left {
-                                rotate: -90deg;
-                            }
-
-                            .section_dropdown_content_slideshow_right {
-                                rotate: 90deg;
                             }
                         }
 
@@ -109,14 +108,14 @@ html {
                             visibility: inherit;
                             margin: 0px;
                             padding: 10px;
-                            color: var(--mainLight);
+                            color: var(--baseColor);
                         }
                     }
                 }
 
                 a {
                     text-decoration: underline;
-                    color: var(--mainLight)
+                    color: var(--baseColor)
                 }
             }
 
@@ -132,8 +131,9 @@ html {
 
                     a {
                         flex: 1;
-                        background-color: var(--mainColor);
+                        background-color: var(--altColor);
                         border-radius: var(--borderrad);
+                        font-weight: bolder;
                         font-size: 20px;
                         text-decoration: none;
                         line-height: 35px;
@@ -151,6 +151,5 @@ html {
 
 .span-link {
     text-decoration: underline;
-    text-shadow: 0px 0px 5px var(--mainLight);
-    color: var(--mainDark);
+    text-shadow: 0px 0px 5px var(--baseColor);
 }

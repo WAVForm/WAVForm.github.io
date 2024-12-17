@@ -1,11 +1,7 @@
 :root {
     /*Color Palette*/
-    --mainColor: #416450;
-    --mainLight: #C6E5B6;
-    --mainDark: #25312A;
-
     --baseColor: #334B3D;
-    --altColor: #2C3E34;
+    --altColor: #96BE99;
     /*Color Palette*/
 
     --borderrad: 30px;
@@ -14,12 +10,12 @@
 
 html[display_mode="dark"] {
     --baseColor: #334B3D;
-    --altColor: #2C3E34;
+    --altColor: #96BE99;
 }
 
 html[display_mode="light"] {
     --baseColor: #96BE99;
-    --altColor: #6C8D70;
+    --altColor: #334B3D;
 }
 
 html {
@@ -28,26 +24,30 @@ html {
     body {
         margin: 0px;
         font-family: 'Courier New';
-        text-shadow: 0px 2px var(--mainDark);
         background-color: var(--baseColor);
-
+        text-shadow: 1px 1px 0px var(--shadowColor);
         h1,
         h2,
         h3,
         h4,
         h5,
         h6 {
-            color: var(--mainLight);
-            margin: 0px;
+            color: var(--altColor);
         }
+    }
+
+    section:not(section#navbar, section#menu):nth-child(3){
+        padding-top: 80px;
     }
 
     section#navbar {
         display: block;
         position: fixed;
+        z-index: 999;
         width: 100vw;
         height: 80px;
-        background-color: var(--mainColor);
+        background-color: var(--baseColor);
+        border-bottom: solid 5px var(--altColor);
 
         div#menu_button {
             display: flex;
@@ -63,7 +63,7 @@ html {
 
             div {
                 height: 5px;
-                background-color: var(--mainLight);
+                background-color: var(--altColor);
                 margin-top: 10px;
             }
         }
@@ -73,30 +73,30 @@ html {
         visibility: hidden;
         position: fixed;
         top: 80px;
-        background-color: var(--altColor);
+        background-color: var(--baseColor);
 
         div.section_content {
 
-            div {
+            div:not(div#toggle_ball, div#menu_darken) {
                 height: 100px;
-                border: solid 5px rgba(0, 0, 0, 0.1); /*change*/
+                border-bottom: solid 5px var(--altColor);
             }
 
             a {
                 display: block;
                 width: 100vw;
-                border: solid 5px rgba(0, 0, 0, 0.1);
+                border-bottom: solid 5px var(--altColor);
                 font-size: 48px;
                 font-weight: bolder;
                 line-height: 100px;
                 text-decoration: none;
                 text-align: center;
-                color: var(--mainLight);
+                color: var(--altColor);
             }
 
             div#menu_settings {
-
                 label#toggle_label {
+                    border: solid 5px rgba(0, 0, 0, 0.1);
                     display: block;
                     width: 100px;
                     height: 50px;
@@ -104,7 +104,7 @@ html {
                     left: calc(100% - 20px);
                     top: calc(100% - 50%);
                     transform: translate(-100%, -50%);
-                    background-color: var(--baseColor);
+                    background-color: var(--altColor);
                     border-radius: 100px;
 
                     input#menu_settings_theme_toggle {
@@ -118,7 +118,7 @@ html {
                     height: 50px;
                     border-radius: 100px;
                     box-sizing: border-box;
-                    background-color: var(--mainDark);
+                    background-color: var(--baseColor);
                 }
             }
 
@@ -132,9 +132,8 @@ html {
                     height: 80px;
                     border: 0px;
 
-                    img {
-                        width: 80px;
-                        height: 80px;
+                    svg {
+                        fill: var(--altColor)
                     }
                 }
             }
