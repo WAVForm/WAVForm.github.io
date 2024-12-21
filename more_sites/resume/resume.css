@@ -1,4 +1,4 @@
-@import url("shared/shared.css");
+@import url("../../shared/shared.css");
 
 body{
     section:not(section#navbar, section#menu){

@@ -122,10 +122,11 @@ html {
                 }
             }
 
-            div#menu_icons {
+            div#menu_icons{
                 display: flex;
                 align-items: center;
                 justify-content: space-evenly;
+                width: 100vw;
 
                 a {
                     width: 80px;
