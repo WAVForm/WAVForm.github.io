@@ -47,33 +47,33 @@ for (let drop of document.getElementsByClassName("sub_section_dropdown_title")) 
 for (let slideshow of document.getElementsByClassName("section_dropdown_content_slideshow")) {
     let images = slideshow_image_paths[slideshow.id];
     let index = images.length;
-    let can = true;
     let left = slideshow.children[0];
     let image = slideshow.children[1];
     let right = slideshow.children[2];
+    let auto = setInterval(next_img, 3000);
     function next_img(start) {
-        if (can && slideshow.parentElement.style.visibility == "visible" || start) {
-            can = false;
+        if (slideshow.parentElement.style.visibility == "visible" || start)  {
             index++;
             if (index > images.length - 1) {
                 index = 0;
             }
             image.src = images[index];
-            setTimeout(() => { can = true; }, 100);
+            clearInterval(auto);
+            auto = setInterval(next_img, 3000);
         }
     }
     function prev_img() {
-        if (can && slideshow.parentElement.style.visibility == "visible") {
+        if (slideshow.parentElement.style.visibility == "visible") {
             index--;
             if (index < 0) {
                 index = images.length - 1;
             }
             image.src = images[index];
-            setTimeout(() => { can = true; }, 100);
+            clearInterval(auto);
+            auto = setInterval(next_img, 3000);
         }
     }
-    next_img(true);
-    setInterval(next_img, 3000);
     left.addEventListener("click", prev_img);
     right.addEventListener("click", next_img);
+    next_img(true)
 }
