@@ -1,6 +1,6 @@
 let slideshow_image_paths = {
     slideshow_about_dev: ["images/email.svg", "images/github.svg", "images/instagram.svg", "images/linkedin.svg"],
-    slideshow_about_photo: ["images/email.svg", "images/github.svg", "images/instagram.svg", "images/linkedin.svg"],
+    slideshow_about_photo: ["images/p1.webp", "images/p2.webp", "images/p3.webp"],
     slideshow_about_music: ["images/email.svg", "images/github.svg", "images/instagram.svg", "images/linkedin.svg"],
     slideshow_about_diy: ["images/email.svg", "images/github.svg", "images/instagram.svg", "images/linkedin.svg"]
 }
