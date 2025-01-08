@@ -8,12 +8,12 @@
     --section_distance: 20px
 }
 
-html[display_mode="dark"] {
+@media (prefers-color-scheme: dark) {
     --baseColor: #334B3D;
     --altColor: #96BE99;
 }
 
-html[display_mode="light"] {
+@media (prefers-color-scheme: light) {
     --baseColor: #96BE99;
     --altColor: #334B3D;
 }
@@ -78,7 +78,7 @@ html {
 
         div.section_content {
 
-            div:not(div#toggle_ball, div#menu_darken) {
+            div:not(div#menu_darken) {
                 height: 100px;
                 border-bottom: solid 5px var(--altColor);
             }
@@ -93,34 +93,6 @@ html {
                 text-decoration: none;
                 text-align: center;
                 color: var(--altColor);
-            }
-
-            div#menu_settings {
-                label#toggle_label {
-                    border: solid 5px rgba(0, 0, 0, 0.1);
-                    display: block;
-                    width: 100px;
-                    height: 50px;
-                    position: relative;
-                    left: calc(100% - 20px);
-                    top: calc(100% - 50%);
-                    transform: translate(-100%, -50%);
-                    background-color: var(--altColor);
-                    border-radius: 100px;
-
-                    input#menu_settings_theme_toggle {
-                        visibility: hidden;
-                    }
-                }
-
-                div#toggle_ball {
-                    position: relative;
-                    width: 50px;
-                    height: 50px;
-                    border-radius: 100px;
-                    box-sizing: border-box;
-                    background-color: var(--baseColor);
-                }
             }
 
             div#menu_icons{

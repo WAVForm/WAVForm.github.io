@@ -10,15 +10,6 @@ for (let button of document.getElementsByClassName("menu_button")) {
     button.addEventListener("click", toggle_menu);
 }
 
-function toggle_theme(f) {
-    var currentTheme = document.documentElement.getAttribute("display_mode");
-    var targetTheme = currentTheme === "dark" ? "light" : "dark";
-    var ball = document.getElementById("toggle_ball");
-    ball.style.left = ball.style.left === "50px" ? "0px" : "50px";
-    document.documentElement.setAttribute('display_mode', targetTheme)
-    localStorage.setItem('themePreference', targetTheme);
-}
-
 let menu_open = false;
 function toggle_menu() {
     if (menu_open) {
