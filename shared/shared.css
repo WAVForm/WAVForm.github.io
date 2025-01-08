@@ -72,6 +72,7 @@ html {
     section#menu {
         visibility: hidden;
         position: fixed;
+        z-index: 998;
         top: 80px;
         background-color: var(--baseColor);
 
