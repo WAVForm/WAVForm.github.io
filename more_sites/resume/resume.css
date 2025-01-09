@@ -1,13 +1,13 @@
 @import url("../../shared/shared.css");
 
 body{
+    font-size: 10pt;
     section:not(section#navbar, section#menu){
         padding-left: 10px;
         padding-right: 10px;
         p{
             color: var(--altColor);
             line-height: 15px;
-            font-size: 12pt;
             margin: 5px;
         }
         ul{
@@ -30,6 +30,7 @@ body{
         }
 
         div.title{
+            width: fit-content;
             span{
                 font-weight: 900;
             }
@@ -41,7 +42,9 @@ body{
         }
 
         div.skill-category{
+            display: inline-block;
             width: fit-content;
+            width: 150px;
         }
     }
 }
@@ -53,9 +56,8 @@ section#header{
         margin-bottom: 10px;
         margin-top: 10px;
     }
-    p{
-        img{
-            height: 12px;
-        }
-    }
+}
+
+@media print{
+    /*style printable*/
 }

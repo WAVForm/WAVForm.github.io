@@ -3,7 +3,6 @@ var menu = document.getElementById("menu");
 var menu_button = document.getElementById("menu_button");
 document.documentElement.setAttribute("display_mode", localStorage.getItem('themePreference') === "dark" ? "dark" : "light");
 
-theme_toggle.addEventListener("change", toggle_theme);
 menu_button.addEventListener("click", toggle_menu);
 menu_button.addEventListener("touchstart", (e) => { e.preventDefault(); toggle_menu(); });
 for (let button of document.getElementsByClassName("menu_button")) {
